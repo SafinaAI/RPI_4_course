@@ -177,7 +177,7 @@ ul li {
 }
 
 .cancel {
-  width: 200px;
+  width: 250px;
   height: 40px;
   border-radius: 5px;
   text-align: left;
@@ -191,81 +191,3 @@ ul li {
   border-style: hidden;
   text-align: center;
 }
-
-/* .list_shell-main {
-  display: grid;
-  /* Будет создано 3 колонки */
-/* grid-template-columns: repeat(4, 300px); */
-/* Будет создано 3 ряда */
-/* grid-template-rows: repeat(4, 50px); */
-/* grid-template-areas:
-    "list-header list-header list-header list-header"
-    "list-content list-content list-content list-content"
-    "list-content list-content list-content list-content"
-    "list-content  .       .       list-btn";
-
-  gap: 20px; */
-/* } */
-
-/* .item1 {
-  grid-area: list-header;
-}
-
-.item2 {
-  grid-area: list-content;
-  background-color: #fff;
-  padding: 8px;
-  border-radius: 5px;
-}
-
-.item3 {
-  grid-area: list-btn;
-  background-color: rgb(199, 140, 140);
-  padding: 8px;
-  border-radius: 5px;
-}
-
-.list_shell-link {
-  padding: 8px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.list_shell_link_color-gray {
-  background-color: rgb(155, 152, 152);
-  color: rgb(254 254 254 / 49%);
-}
-
-.list_shell_link_color-blue {
-  background-color: rgb(180, 180, 242);
-  color: rgb(107 107 240 / 66%);
-}
-
-.list_shell_link_color-green {
-  background-color: rgb(210, 252, 210);
-  color: rgb(37 140 37 / 53%);
-}
-
-.list_shell_link_color-pink {
-  background-color: pink;
-  color: rgb(187 64 85 / 54%);
-}
-
-.list_shell-dependent-item {
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: 450;
-  color: rgb(0 0 0 / 74%);
-  max-width: 300px;
-}
-
-.clear_text {
-  margin-top: 20px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 600;
-  align-items: center;
-} */

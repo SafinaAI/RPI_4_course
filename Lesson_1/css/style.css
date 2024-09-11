@@ -1,0 +1,271 @@
+/* Основные настройки страницы */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  /* max-width: 250px; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(207, 219, 247);
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+/* ______________________________________ */
+
+/* HEADER */
+
+.header {
+  margin-bottom: 25px;
+  background-color: rgb(86, 165, 238);
+  color: #fff;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: top;
+}
+
+/* __________________________________________ */
+
+/* MAIN */
+
+/* form_new_task */
+
+.form_new_task {
+  margin-bottom: 30px;
+}
+
+.form_new_task-wrapper {
+  background-color: #fff;
+  width: 400px;
+  height: 110px;
+  margin-right: 1000px;
+  border-radius: 10px;
+}
+
+.form_new_task-title {
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: left;
+}
+
+.task_form {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.task_but {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  color: white;
+  border-left: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: rgb(86, 165, 238);
+  border-radius: 10px;
+}
+
+/* to-do_list */
+ul li {
+  width: 250px;
+}
+
+.to-do_list {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  gap: 100px;
+  margin-bottom: 20px;
+}
+
+.list-title {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 550;
+  padding-left: 15px;
+}
+
+.title-backlog {
+  background-color: rgb(155, 152, 152);
+  color: rgb(254 254 254 / 49%);
+}
+
+.title-process {
+  background-color: rgb(180, 180, 242);
+  color: rgb(107 107 240 / 66%);
+}
+
+.title-ready {
+  background-color: rgb(210, 252, 210);
+  color: rgb(37 140 37 / 53%);
+}
+
+.title-basket {
+  background-color: pink;
+  color: rgb(187 64 85 / 54%);
+}
+
+.list-shell-header-item {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
+  max-width: 300px;
+  border-style: hidden hidden hidden solid;
+  border-width: thin thin thin 5px;
+}
+
+.list-shell-header-backlog li {
+  border-left-color: rgba(42, 40, 40, 0.49);
+}
+
+.list-shel-header-process li {
+  border-left-color: rgba(119, 119, 246, 0.66);
+}
+
+.list-shell-header-ready li {
+  border-left-color: rgb(37 140 37 / 53%);
+}
+
+.list-shell-header-basket li {
+  border-left-color: rgba(193, 76, 95, 0.54);
+}
+
+.cancel {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 550;
+  padding: 10px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #ec6969;
+  display: inline-block;
+  border-style: hidden;
+  text-align: center;
+}
+
+/* .list_shell-main {
+  display: grid;
+  /* Будет создано 3 колонки */
+/* grid-template-columns: repeat(4, 300px); */
+/* Будет создано 3 ряда */
+/* grid-template-rows: repeat(4, 50px); */
+/* grid-template-areas:
+    "list-header list-header list-header list-header"
+    "list-content list-content list-content list-content"
+    "list-content list-content list-content list-content"
+    "list-content  .       .       list-btn";
+
+  gap: 20px; */
+/* } */
+
+/* .item1 {
+  grid-area: list-header;
+}
+
+.item2 {
+  grid-area: list-content;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.item3 {
+  grid-area: list-btn;
+  background-color: rgb(199, 140, 140);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.list_shell-link {
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.list_shell_link_color-gray {
+  background-color: rgb(155, 152, 152);
+  color: rgb(254 254 254 / 49%);
+}
+
+.list_shell_link_color-blue {
+  background-color: rgb(180, 180, 242);
+  color: rgb(107 107 240 / 66%);
+}
+
+.list_shell_link_color-green {
+  background-color: rgb(210, 252, 210);
+  color: rgb(37 140 37 / 53%);
+}
+
+.list_shell_link_color-pink {
+  background-color: pink;
+  color: rgb(187 64 85 / 54%);
+}
+
+.list_shell-dependent-item {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
+  max-width: 300px;
+}
+
+.clear_text {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  align-items: center;
+} */

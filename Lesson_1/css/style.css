@@ -191,3 +191,33 @@ ul li {
   border-style: hidden;
   text-align: center;
 }
+
+#list_title {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: lightgray;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+#tasklist li {
+  border-left-color: lightgray;
+  background-color: aliceblue;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
+  max-width: 300px;
+  border-style: hidden hidden hidden solid;
+  border-width: thin thin thin 5px;
+}
+
+.tasks {
+  display: flex;
+  grid-template-columns: 10% 10% 10% 10%;
+  gap: 30px;
+}

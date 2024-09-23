@@ -1,20 +1,17 @@
-// 
+//Ul
 import { createElement } from "../framework/render.js";
 
-function createTaskListComponentTemplate() {
-  return ` <div">
+function createTasksListComponentTemplate() {
+  return ` <div>
             <ul id = "tasklist">
               <div id = "list_title">Название Бэклога</div>
-              <li>Задача</li>
-              <li>Задача</li>
-              <li>Задача</li>
             </ul>
           </div>`;
 }
 
-export default class TaskListComponent {
+export default class TasksListComponent {
   getTemplate() {
-    return createTaskListComponentTemplate();
+    return createTasksListComponentTemplate();
   }
 
   getElement() {

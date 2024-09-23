@@ -61,7 +61,93 @@ a {
 
 /* form_new_task */
 
-.form_new_task {
+.add-task__form {
+  background-color: #fff;
+  width: 400px;
+  height: 110px;
+  margin-right: 1000px;
+  border-radius: 10px;
+}
+
+.add-task__input-wrapper {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.add-task {
+  margin-top: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+}
+
+.add-task__button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  color: white;
+  border-left: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  background-color: rgb(86, 165, 238);
+  border-radius: 10px;
+}
+
+/* FORMA */
+
+ul li {
+  width: 250px;
+}
+
+.taskBoard {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  gap: 100px;
+  margin-bottom: 20px;
+}
+
+.list_title {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 550;
+  padding-left: 15px;
+}
+
+.taskboard__item {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
+  max-width: 300px;
+  border-style: hidden hidden hidden solid;
+  border-width: thin thin thin 5px;
+}
+
+.task--view {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 550;
+  padding-left: 15px;
+}
+
+/* .form_new_task {
   margin-bottom: 30px;
 }
 
@@ -100,10 +186,10 @@ a {
   font-family: sans-serif;
   background-color: rgb(86, 165, 238);
   border-radius: 10px;
-}
+} */
 
 /* to-do_list */
-ul li {
+/* ul li {
   width: 250px;
 }
 
@@ -220,4 +306,4 @@ ul li {
   display: flex;
   grid-template-columns: 10% 10% 10% 10%;
   gap: 30px;
-}
+} */

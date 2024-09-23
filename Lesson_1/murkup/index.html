@@ -5,19 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="board-app">
+    <header class="header">
+      <div class="container header_title">
+        <h1 class="title">Список задач</h1>
+      </div>
+    </header>
+    <main class="board-app__main">
+      <div class="board-app_inner">
+        <section class="add-task">
+          <form class="add-task__form" aria-label="Форма добавления задачи">
+            <div class="add-task__input-wrapper">
+              <label class="add-task-title" for="add-task">Новая задача</label>
+              <input
+                class="input"
+                type="text"
+                name="task-name"
+                id="add-task"
+                placeholder="Название задачи..."
+                required
+              />
+            </div>
+            <button class="add-task__button button" type="submit">
+              <span>Добавить</span>
+            </button>
+          </form>
+        </section>
+        <section class="taskBoard">
+          <div>
+            <ul id="tasklist">
+              <div id="list_title">Название Бэклога</div>
+              <div class="taskboard__item task task--${status}">
+                <div class="task__body">
+                  <p class="task--view">${title}</p>
+                  <input type="text" class="task--input" />
+                </div>
+                <button
+                  aria-label="Изменить"
+                  class="task__edit"
+                  type="button"
+                ></button>
+              </div>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="src/main.js" type="module"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="container">
+        <div class="container header_title">
           <h1 class="title">Список задач</h1>
         </div>
       </header>
       <main class="main">
         <div class="container">
           <section class="form_new_task container">
-            <!--Форма-->
+        
             <div class="form_new_task-wrapper">
               <h2 class="form_new_task-title">Новая задача</h2>
               <form action="" method="get" class="form">
@@ -34,7 +93,7 @@
             </div>
           </section>
           <section class="to-do_list">
-            <!-- <div class="container"> -->
+          
             <ul class="list-shell-header-backlog">
               <label class="list-title title-backlog">Бэклог</label>
               <li class="list-shell-header-item">Выучить JS</li>
@@ -66,4 +125,4 @@
       <footer></footer>
     </div>
   </body>
-</html>
+</html> -->

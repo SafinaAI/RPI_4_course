@@ -1,11 +1,9 @@
 import { createElement } from "../framework/render.js";
 
 function createHeaderComponentTemplate() {
-  return `<header class="header">
-        <div class="container">
+  return ` <div class="container header_title">
           <h1 class="title">Список задач</h1>
-        </div>
-      </header>`;
+        </div>`;
 }
 
 export default class HeaderComponent {

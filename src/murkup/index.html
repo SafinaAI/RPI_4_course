@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header_title">
+          <h1 class="title">Список задач</h1>
+        </div>
+      </header>
+      <main class="board-app__main">
+        <div class="container">
+          <section class="add-task">
+            <h2 class="add-task-title">Новая задача</h2>
+            <form action="" method="get" class="form">
+              <p>
+                <input
+                  class="task_form"
+                  name="task"
+                  type="text"
+                  placeholder="Название задачи"
+                />
+              </p>
+              <button type="submit" class="task_but">+Добавить</button>
+            </form>
+          </section>
+          <section class="taskBoard">
+            <ul class="backlog">
+              <label class="list-title">Бэклог</label>
+              <li class="taskboard__item">Выучить JS</li>
+              <li class="taskboard__item">Выучить React</li>
+              <li class="taskboard__item">Выучить домашку</li>
+            </ul>
+
+            <ul class="process">
+              <label class="list-title">В процессе</label>
+              <li class="taskboard__item">Выпить смузи</li>
+              <li class="taskboard__item">Попить воды</li>
+            </ul>
+
+            <ul class="ready">
+              <label class="list-title">Готово</label>
+              <li class="taskboard__item">Позвонить маме</li>
+              <li class="taskboard__item">Погладить кота</li>
+            </ul>
+
+            <ul class="basket">
+              <label class="list-title">Корзина</label>
+              <li class="taskboard__item">Сходить погулять</li>
+              <li class="taskboard__item">Прочитать Войну и мир</li>
+              <button class="cancel" type="button">X Очистить</button>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>

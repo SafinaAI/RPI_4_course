@@ -1,5 +1,4 @@
 import { createElement } from "../framework/render.js";
-
 function createFormAddTaskComponentTemplate() {
   return `<form class="add-task__form" aria-label="Форма добавления задачи">
     <div class="add-task__input-wrapper">

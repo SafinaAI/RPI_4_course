@@ -3,8 +3,8 @@ import { createElement } from "../framework/render.js";
 
 function createTasksListComponentTemplate() {
   return ` <div>
-            <ul id = "tasklist">
-              <div id = "list_title">Название Бэклога</div>
+            <ul class = "tasklist">
+              <div class = "list_title">Название Бэклога</div>
             </ul>
           </div>`;
 }

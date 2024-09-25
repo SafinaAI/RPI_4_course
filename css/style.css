@@ -49,7 +49,7 @@ a {
   color: #fff;
 }
 
-.title {
+.header_title {
   font-size: 30px;
   font-weight: 700;
   text-align: top;
@@ -62,7 +62,7 @@ a {
 /* FORMA */
 
 .add-task {
-  background-color: #fff;
+  background-color: #adcdf5;
   width: 400px;
   height: 110px;
   margin-right: 1000px;
@@ -74,13 +74,8 @@ a {
 }
 
 .add-task-title {
-  margin-bottom: 20px;
   font-weight: 700;
   font-size: 24px;
-}
-
-.form {
-  display: flex;
 }
 
 .task_form {
@@ -114,22 +109,25 @@ ul li {
   margin-bottom: 20px;
 }
 
-.list-title {
-  width: 150px;
-  height: 35px;
+.tasklist {
+  width: 250px;
+  height: 40px;
   border-radius: 5px;
   text-align: left;
-  padding: 10px;
   margin-bottom: 10px;
   display: inline-block;
-  font-size: 18px;
-  font-weight: 550;
-  padding-left: 15px;
   background-color: #8993ac;
 }
 
-.taskboard__item {
-  background-color: #fff;
+.list_title {
+  font-size: 15px;
+  font-weight: 550;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.tasks {
+  background-color: #dcc5c5;
   padding: 8px;
   border-radius: 5px;
   margin-top: 5px;

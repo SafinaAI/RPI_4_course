@@ -1,14 +1,17 @@
 import { createElement } from "../framework/render.js";
 function createFormAddTaskComponentTemplate() {
-  return `<form class="add-task__form" aria-label="Форма добавления задачи">
-    <div class="add-task__input-wrapper">
-      <label for="add-task">Новая задача</label>
-      <input type="text" name="task-name" id="add-task" placeholder="Название задачи..." required>
-    </div>
-    <button class="add-task__button button" type="submit">
-      <span>Добавить</span>
-    </button>
-    </form> `;
+  return ` 
+            <form action="" method="get" class="form">
+            <h2 class="add-task-title">Новая задача</h2><br>
+                <input
+                  class="task_form"
+                  name="task"
+                  type="text"
+                  placeholder="Название задачи"
+                />
+              <button type="submit" class="task_but">+Добавить</button>
+            </form>
+            `;
 }
 
 export default class FormAddTaskComponent {

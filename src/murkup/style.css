@@ -27,14 +27,7 @@ a {
   color: inherit;
 }
 
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(207, 219, 247);
-}
-
-.container {
+.board-app {
   max-width: 1220px;
   margin: 0 auto;
 }
@@ -43,16 +36,11 @@ a {
 
 /* HEADER */
 
-.header {
-  margin-bottom: 25px;
-  background-color: rgb(86, 165, 238);
-  color: #fff;
-}
-
 .header_title {
   font-size: 30px;
   font-weight: 700;
   text-align: top;
+  background-color: rgb(86, 165, 238);
 }
 
 /* __________________________________________ */

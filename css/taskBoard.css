@@ -1,0 +1,31 @@
+/* TASK-BOARD */
+
+ul li {
+    width: 250px;
+  }
+  
+  .taskBoard {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .tasklist {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #8993ac;
+  }
+  
+  .list_title {
+    font-size: 15px;
+    font-weight: 550;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  

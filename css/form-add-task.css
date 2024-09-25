@@ -1,0 +1,37 @@
+/* FORMA */
+
+.add-task {
+    background-color: #adcdf5;
+    width: 400px;
+    height: 110px;
+    margin-right: 1000px;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 35px;
+  }
+  
+  .add-task-title {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  
+  .task_form {
+    margin-right: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+  
+  .task_but {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    color: white;
+    border-left: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: rgb(86, 165, 238);
+    border-radius: 10px;
+  }
+  

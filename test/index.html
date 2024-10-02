@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <h1 class="title">Список задач</h1>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="form_new_task container">
+            <!--Форма-->
+            <div class="form_new_task-wrapper">
+              <h2 class="form_new_task-title">Новая задача</h2>
+              <form action="" method="get" class="form">
+                <p>
+                  <input
+                    class="task_form"
+                    name="task"
+                    type="text"
+                    placeholder="Название задачи"
+                  />
+                </p>
+                <button type="submit" class="task_but">+Добавить</button>
+              </form>
+            </div>
+          </section>
+          <section class="to-do_list">
+            <!-- <div class="container"> -->
+            <div class="list-shell-header-backlog">
+              <label class="list-title title-backlog">Бэклог</label>
+              <p class="list-shell-header-item">Выучить JS</p>
+              <p class="list-shell-header-item">Выучить React</p>
+              <p class="list-shell-header-item">Выучить домашку</p>
+            </div>
+
+            <div class="list-shell-header-process">
+              <label class="list-title title-process">В процессе</label>
+              <p class="list-shell-header-item">Выпить смузи</p>
+              <p class="list-shell-header-item">Попить воды</p>
+            </div>
+
+            <div class="list-shell-header-ready">
+              <label class="list-title title-ready">Готово</label>
+              <p class="list-shell-header-item">Позвонить маме</p>
+              <p class="list-shell-header-item">Погладить кота</p>
+            </div>
+
+            <div class="list-shell-header-basket">
+              <label class="list-title title-basket">Корзина</label>
+              <p class="list-shell-header-item">Сходить погулять</p>
+              <p class="list-shell-header-item">Прочитать Войну и мир</p>
+              <button class="cancel" type="button">X Очистить</button>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>

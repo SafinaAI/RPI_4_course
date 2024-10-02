@@ -1,31 +1,74 @@
 /* TASK-BOARD */
 
 ul li {
-    width: 250px;
-  }
-  
-  .taskBoard {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    gap: 100px;
-    margin-bottom: 20px;
-  }
-  
-  .tasklist {
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    text-align: left;
-    margin-bottom: 10px;
-    display: inline-block;
-    background-color: #8993ac;
-  }
-  
-  .list_title {
-    font-size: 15px;
-    font-weight: 550;
-    padding: 10px;
-    margin-bottom: 15px;
-  }
-  
-  
+  width: 250px;
+}
+
+.taskBoard {
+  display: flex;
+  grid-template-columns: 20% 20% 20% 20%;
+  gap: 100px;
+  margin-bottom: 20px;
+}
+
+.list-title {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 550;
+  padding-left: 15px;
+}
+
+.title-backlog {
+  background-color: rgb(155, 152, 152);
+  color: rgb(254 254 254 / 49%);
+}
+
+.title-inProgress {
+  background-color: rgb(180, 180, 242);
+  color: rgb(107 107 240 / 66%);
+}
+
+.title-done {
+  background-color: rgb(210, 252, 210);
+  color: rgb(37 140 37 / 53%);
+}
+
+.title-trash {
+  background-color: pink;
+  color: rgb(187 64 85 / 54%);
+}
+
+.list-shell-header-item {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
+  max-width: 300px;
+  border-style: hidden hidden hidden solid;
+  border-width: thin thin thin 5px;
+}
+
+.list-shell-header-backlog p {
+  border-left-color: rgba(42, 40, 40, 0.49);
+}
+
+.list-shell-header-inProgress p {
+  border-left-color: rgba(119, 119, 246, 0.66);
+}
+
+.list-shell-header-done p {
+  border-left-color: rgb(37 140 37 / 53%);
+}
+
+.list-shell-header-trash p {
+  border-left-color: rgba(193, 76, 95, 0.54);
+}

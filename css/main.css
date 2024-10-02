@@ -1,45 +1,45 @@
 /* Основные настройки страницы */
 
 html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::after,
-  *::before {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html,
-  body {
-    height: 100%;
-  }
-  
-  ul {
-    list-style: none;
-    /* max-width: 250px; */
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .board-app {
-    max-width: 1220px;
-    margin: 0 auto;
-  }
-  
-  /* ______________________________________ */
-  
-  /* HEADER */
-  
-  .header_title {
-    font-size: 30px;
-    font-weight: 700;
-    text-align: top;
-    background-color: rgb(86, 165, 238);
-  }
-  
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: rgb(207, 219, 247);
+}
+
+ul {
+  list-style: none;
+  /* max-width: 250px; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.board-app {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+/* ______________________________________ */
+
+/* HEADER */
+
+.header_title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: top;
+  background-color: rgb(86, 165, 238);
+}

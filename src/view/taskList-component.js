@@ -1,13 +1,6 @@
 //Ul
 import { createElement } from "../framework/render.js";
-
-// function createTasksListComponentTemplate() {
-//   return ` <div>
-//             <ul class = "tasklist">
-//               <div class = "list_title">Название Бэклога</div>
-//             </ul>
-//           </div>`;
-// }
+import { AbstractComponent } from "../framework/view/abstract-component.js";
 
 function createTasksListComponentTemplate(status) {
   const { status_title, label } = status;
@@ -16,23 +9,12 @@ function createTasksListComponentTemplate(status) {
               </div>`;
 }
 
-export default class TasksListComponent {
+export default class TasksListComponent extends AbstractComponent {
   constructor({ task_status }) {
+    super();
     this.status = task_status;
   }
-  getTemplate() {
+  get template() {
     return createTasksListComponentTemplate(this.status);
-  }
-
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
-
-    return this.element;
-  }
-
-  removeElement() {
-    this.element = null;
   }
 }

@@ -12,7 +12,7 @@ ul li {
 }
 
 .list-title {
-  width: 150px;
+  width: 230px;
   height: 35px;
   border-radius: 5px;
   text-align: left;
@@ -71,4 +71,15 @@ ul li {
 
 .list-shell-header-trash p {
   border-left-color: rgba(193, 76, 95, 0.54);
+}
+
+.empty_task {
+  border-style: solid;
+  border-width: thin;
+}
+
+.empty_task-title {
+  font-size: 15px;
+  font-weight: 450;
+  color: rgb(0 0 0 / 74%);
 }

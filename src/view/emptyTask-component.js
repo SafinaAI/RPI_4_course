@@ -1,14 +1,32 @@
-import { createElement } from "../framework/render.js";
+// import { createElement } from "../framework/render.js";
+// import { AbstractComponent } from "../framework/view/abstract-component.js";
+
+// function createPlugComponentTemplate() {
+//   return ` <div class="empty_task">
+//           <p class="empty_task-title">Перетащите карточку</p>
+//         </div>`;
+// }
+
+// export default class PlugComponent extends AbstractComponent {
+//   get template() {
+//     return createPlugComponentTemplate();
+//   }
+// }
+
 import { AbstractComponent } from "../framework/view/abstract-component.js";
 
-function createPlugComponentTemplate() {
-  return ` <div class="empty_task">
-          <p class="empty_task-title">Перетащите карточку</p>
+function createEmptyTaskComponent() {
+  return `<div class="empty_task">
+        <p>No tasks under this stage</p>
         </div>`;
 }
 
-export default class PlugComponent extends AbstractComponent {
+export default class EmptyTaskComponent extends AbstractComponent {
   get template() {
-    return createPlugComponentTemplate();
+    return createEmptyTaskComponent();
+  }
+
+  removeElement() {
+    this.element = null;
   }
 }

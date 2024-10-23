@@ -21,3 +21,7 @@ render(new HeaderComponent(), bodyContainer, RenderPosition.AFTERBEGIN);
 render(new FormAddTaskComponent(), formContainer);
 
 tasksBoardPresenter.init();
+
+function handleNewTaskButtonClick() {
+  tasksBoardPresenter.createTask();
+}

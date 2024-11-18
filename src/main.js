@@ -11,6 +11,9 @@ const bodyContainer = document.querySelector("body");
 const formContainer = document.querySelector(".add-task");
 const tasksBoardContainer = document.querySelector(".taskBoard");
 
+const formAddTaskComponent = new FormAddTaskComponent({
+  onClick: handleNewTaskButtonClick,
+});
 const tasksModel = new TasksModel();
 const tasksBoardPresenter = new TasksBoardPresenter({
   boardContainer: tasksBoardContainer,
@@ -18,7 +21,7 @@ const tasksBoardPresenter = new TasksBoardPresenter({
 });
 
 render(new HeaderComponent(), bodyContainer, RenderPosition.AFTERBEGIN);
-render(new FormAddTaskComponent(), formContainer);
+render(formAddTaskComponent, formContainer);
 
 tasksBoardPresenter.init();
 

@@ -145,8 +145,9 @@ export default class TasksBoardPresenter {
 
   #clearAllTasks() {
     console.log("Clear board");
-    this.#tasksModel.tasks = [];
-    this.#clearBoard();
+
+    this.#tasksModel.tasks = this.#tasksModel.clearTasks();
+    // this.#clearBoard();
   }
 
   createTask() {

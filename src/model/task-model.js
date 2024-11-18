@@ -8,7 +8,8 @@
 //   }
 // }
 import { tasks } from "../mock/task.js";
-import generateId from "../utils.js";
+import generateUniqueIdentifier from "../utils.js";
+//import { generateUniqueIdentifier } from "../utils.js";
 
 // export default class TasksModel {
 //   #boardTasks;
@@ -87,6 +88,14 @@ export default class TasksModel {
     this._notifyObservers();
     return newTask;
   }
+  clearTasks() {
+    this.#boardtasks = this.#boardtasks.filter(
+      (task) => task.status !== "trash"
+    );
+    this._notifyObservers();
+    return this.#boardtasks;
+  }
+
   addObserver(observer) {
     this.#observers.push(observer);
   }

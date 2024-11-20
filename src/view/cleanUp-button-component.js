@@ -25,7 +25,7 @@ export default class CleanUpButtonComponent extends AbstractComponent {
 
   constructor({ onClick }) {
     super();
-    console.log("Feels gooood");
+    
     this.#handleClick = onClick;
     this.element.addEventListener("click", this.#clickHandler);
   }

@@ -12,7 +12,7 @@ const formContainer = document.querySelector(".add-task");
 const tasksBoardContainer = document.querySelector(".taskBoard");
 
 const formAddTaskComponent = new FormAddTaskComponent({
-  onClick: handleNewTaskButtonClick,
+  onClick: handleNewTaskButtonClick
 });
 const tasksModel = new TasksModel();
 const tasksBoardPresenter = new TasksBoardPresenter({
@@ -20,7 +20,7 @@ const tasksBoardPresenter = new TasksBoardPresenter({
   tasksModel,
 });
 
-render(new HeaderComponent(), bodyContainer, RenderPosition.AFTERBEGIN);
+render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);
 render(formAddTaskComponent, formContainer);
 
 tasksBoardPresenter.init();

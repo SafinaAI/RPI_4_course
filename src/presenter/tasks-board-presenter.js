@@ -1,75 +1,3 @@
-// import TasksListComponent from "../view/taskList-component.js";
-// import TaskComponent from "../view/task-component.js";
-// import TaskBoardComponent from "../view/taskBoard-component.js";
-// import CleanUpButtonComponent from "../view/cleanUp-button-component.js";
-// import { Status, StatusLabel } from "../consts.js";
-// import { render, RenderPosition } from "../framework/render.js";
-
-// export default class TasksBoardPresenter {
-//   #boardContainer = null;
-//   #tasksModel = null;
-
-//   #tasksBoardComponent = new TaskBoardComponent();
-
-//   #boardTasks = [];
-
-//   constructor({ boardContainer, tasksModel }) {
-//     this.#boardContainer = boardContainer;
-//     this.#tasksModel = tasksModel;
-//     // this.boardTasks = [...this.tasksModel.getTasks()];
-//   }
-
-//   init() {
-//     this.#boardTasks = [...this.#tasksModel.tasks];
-
-//     render(this.#tasksBoardComponent, this.#boardContainer);
-//     for (let status in Status) {
-//       this.status_title = Status[status];
-//       this.label = StatusLabel[`${this.status_title}`];
-//       const tasksListComponent = new TasksListComponent({
-//         task_status: { status_title: this.status_title, label: this.label },
-//       });
-//       console.log(`happier now: ${tasksListComponent.status}`);
-//       render(tasksListComponent, this.#tasksBoardComponent.element);
-
-//       for (let j = 0; j < this.#boardTasks.length; j++) {
-//         this.#renderTask(
-//           this.#boardTasks[j],
-//           tasksListComponent.element,
-//           this.status_title
-//         );
-//       }
-
-//       if (this.status_title === "trash") {
-//         const cleanupComponent = new CleanUpButtonComponent();
-//         render(cleanupComponent, tasksListComponent.element);
-//       }
-//       if (tasksInCurrentStatus.length === 0) {
-//         render(new DragAndDropTaskComponent(), TaskComponent.element);
-//       } else {
-//         Object.values(tasksInCurrentStatus).forEach((taskInCurrentStatus) => {
-//           this.#renderTask(taskInCurrentStatus, TaskComponent.element);
-//         });
-//       }
-//     }
-//   }
-
-//   #renderTask(task, container, status_title) {
-//     const taskComponent = new TaskComponent({ task: task });
-//     if (task.status == status_title) {
-//       render(taskComponent, container);
-//     }
-//   }
-//   makeClearButton() {
-//     const trashContainer = document.querySelector(`.${Status.TRASH}`);
-//     render(new CleanUpButtonComponent(), trashContainer);
-//   }
-// }
-
-//____________________________________________________________________________
-//____________________________________________________________________________
-//____________________________________________________________________________
-
 import TasksListComponent from "../view/taskList-component.js";
 import TaskComponent from "../view/task-component.js";
 import TaskBoardComponent from "../view/taskBoard-component.js";
@@ -78,6 +6,7 @@ import { Status, StatusLabel } from "../consts.js";
 import CleanUpButtonComponent from "../view/cleanUp-button-component.js";
 import EmptyTaskComponent from "../view/emptyTask-component.js";
 import TaskPresenter from "./task-presenter.js";
+import DragAndDropTaskComponent from "../view/Drag-and-drop-task-component.js";
 
 export default class TasksBoardPresenter {
   #tasksBoardComponent = new TaskBoardComponent();
@@ -85,6 +14,7 @@ export default class TasksBoardPresenter {
   #boardContainer = null;
   #tasksModel = null;
   #boardTasks = [];
+  #cleanupComponent = null;
 
   constructor({ boardContainer, tasksModel }) {
     this.#boardContainer = boardContainer;
@@ -107,16 +37,17 @@ export default class TasksBoardPresenter {
     for (let status in Status) {
       this.status_title = Status[status];
       this.label = StatusLabel[`${this.status_title}`];
-      console.log(`${this.status_title} label ${this.label}`);
+
       const tasksListComponent = new TasksListComponent({
         task_status: { status_title: this.status_title, label: this.label },
+        onTaskDrop: this.#handleTaskDrop.bind(this),
       });
-      console.log(`happier now: ${tasksListComponent.status}`);
+
       render(tasksListComponent, this.#tasksBoardComponent.element);
       const tasksForStatus = this.#tasksModel.getTasksByStatus(
         this.status_title
       );
-      console.log(`happier baby: ${tasksForStatus.length} ${status}`);
+
       if (tasksForStatus.length == 0) {
         const emptyTaskComponent = new EmptyTaskComponent();
         render(emptyTaskComponent, tasksListComponent.element);
@@ -130,11 +61,23 @@ export default class TasksBoardPresenter {
         }
       }
       if (this.status_title == "trash") {
-        console.log("Why not");
         this.#renderResetButton(tasksListComponent.element);
       }
     }
   }
+
+  #handleTaskDrop(taskId, newStatus) {
+    this.#tasksModel.updateTaskStatus(taskId, newStatus);
+  }
+
+  // async #handleTaskDrop(taskId, newStatus) {
+  //   try {
+  //     await this.#tasksModel.updateTaskStatus(taskId, newStatus);
+  //   } catch (error) {
+  //     console.error("Error when uploading the status of the task", error);
+  //   }
+  // }
+
   #renderResetButton(container) {
     console.log("Clear board container");
     const cleanupComponent = new CleanUpButtonComponent({
@@ -163,6 +106,29 @@ export default class TasksBoardPresenter {
     this.#clearBoard();
     this.#renderBoard();
   }
+  // #handleModelEvent(event, payload) {
+  //   switch (event) {
+  //     case UserAction.ADD_TASK:
+  //     case UserAction.UPDATE_TASK:
+  //     case UserAction.DELETE_TASK:
+  //       this.#clearBoard();
+  //       this.#renderBoard();
+  //       if (this.#cleanupComponent) {
+  //         this.#cleanupComponent.toggleDisabled(
+  //           !this.#tasksModel.hasBasketTasks()
+  //         );
+  //       }
+  //       break;
+  //   }
+  // }
+
+  // async #handleClearBasketClick() {
+  //   try {
+  //     await this.#tasksModel.clearBasketTasks();
+  //   } catch (error) {
+  //     console.error("Error when cleaning the basket");
+  //   }
+  // }
   #clearBoard() {
     //console.log(`remember: {this.#tasksBoardComponent.element}`)
     this.#tasksBoardComponent.element.innerHTML = "";

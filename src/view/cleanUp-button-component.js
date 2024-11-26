@@ -4,42 +4,47 @@ import { AbstractComponent } from "../framework/view/abstract-component.js";
 function createCleanUpButton() {
   return `
         <button class="clear_button" type="submit">X Очистить</button>
-        `;
+         `;
 }
 
-// export default class CleanUpButtonComponent extends AbstractComponent {
+// export default class CleanUpButton extends AbstractComponent {
+//   #handleClick = null;
+
+//   constructor(isDisabled, onClick) {
+//     super();
+//     this.element.disabled = isDisabled;
+//     this.#handleClick = onClick;
+//     this.element.addEventListener("click", this.#clickHandler);
+//   }
+
 //   get template() {
 //     return createCleanUpButton();
 //   }
+
+//   #clickHandler = (evt) => {
+//     evt.preventDefault();
+//     this.#handleClick();
+//   };
 // }
 
-//------
+export default class ClearButtonComponent extends AbstractComponent{
+  #handleClick=null;
 
-export default class CleanUpButtonComponent extends AbstractComponent {
-  #handleClick = null;
+#clickHandler=(evt)=>{
+  evt.preventDefault();
+  this.#handleClick();
+}
 
-  #clickHandler = (evt) => {
-    evt.preventDefault();
-    this.#handleClick();
-  };
-
-  constructor({ onClick }) {
-    super();
-    
-    this.#handleClick = onClick;
-    this.element.addEventListener("click", this.#clickHandler);
+constructor({onClick}){
+  super();
+  // this.element.disabled = isDisabled;
+  this.#handleClick=onClick;
+  this.element.addEventListener('click', this.#clickHandler);
+}
+  get template(){
+      return createCleanUpButton();
   }
-  get template() {
-    return createCleanUpButton();
-  }
-
-  // get element(){
-  //     if(!this.element){
-  //         this.element=createElement(this.getTemplate());
-  //     }
-  //     return this.element;
-  // }
-  removeElement() {
-    this.element = null;
+  removeElement(){
+      this.element=null;
   }
 }

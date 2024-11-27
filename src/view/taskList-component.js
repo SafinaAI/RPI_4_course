@@ -9,17 +9,6 @@ function createTasksListComponentTemplate(status) {
               </div>`;
 }
 
-// export default class TasksListComponent extends AbstractComponent {
-//   constructor({ task_status }) {
-//     super();
-//     this.status = task_status;
-//   }
-//   get template() {
-//     return createTasksListComponentTemplate(this.status);
-//   }
-// }
-
-
 export default class TaskListComponent extends AbstractComponent{
   
   constructor({task_status, label, onTaskDrop}){
@@ -30,7 +19,6 @@ export default class TaskListComponent extends AbstractComponent{
   }
 
   get template() {
-    //console.log(`heat waves: ${this.status.status_title}`);
     return createTasksListComponentTemplate(this.status);
   }
 
@@ -45,17 +33,6 @@ export default class TaskListComponent extends AbstractComponent{
       onTaskDrop(taskId, this.status)
     })
   }
-
-
-  // get element() {
-  //   if (!this.element) {
-  //     this.element = createElement(this.getTemplate());
-  //   }
-
-
-  //   return this.element;
-  // }
-
 
   removeElement() {
     this.element = null;

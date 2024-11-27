@@ -18,7 +18,7 @@ export default class TasksBoardPresenter {
   constructor({ boardContainer, tasksModel }) {
     this.#boardContainer = boardContainer;
     this.#tasksModel = tasksModel;
-    this.#tasksModel.addObserver(this.#handleModelChange.bind(this));
+    this.#tasksModel.addObserver(this.#handleModelEvent.bind(this));
 
     this.#cleanupComponent = null; // Инициализируем переменную для кнопки очистки
   }
@@ -29,8 +29,6 @@ export default class TasksBoardPresenter {
     this.#clearBoard();
     render(this.#tasksBoardComponent, this.#boardContainer);
     this.#renderBoard();
-
-    this.#updateCleanupButtonState(); // Обновляем состояние кнопки при инициализации
   }
 
   #renderTask(task, container) {
@@ -74,17 +72,9 @@ export default class TasksBoardPresenter {
 
   #renderResetButton(container) {
     const cleanupComponent = new CleanUpButtonComponent({
-      onClick: this.#clearAllTasks.bind(this),
+      onClick: this.#handleClearBasketClick.bind(this),
     });
     render(cleanupComponent, container);
-
-    this.#updateCleanupButtonState(); // Обновляем состояние кнопки после рендеринга
-  }
-
-  #clearAllTasks() {
-    this.#tasksModel.tasks = this.#tasksModel.clearTasks();
-
-    this.#updateCleanupButtonState(); // Обновляем состояние кнопки после очистки
   }
 
   async createTask() {
@@ -99,11 +89,6 @@ export default class TasksBoardPresenter {
       console.error("Error when creating the exercise", error);
     }
   }
-  #handleModelChange() {
-    this.#clearBoard();
-    this.#renderBoard();
-    this.#updateCleanupButtonState(); // Обновляем состояние кнопки при изменении модели
-  }
 
   #updateCleanupButtonState() {
     if (this.#cleanupComponent) {
@@ -111,7 +96,7 @@ export default class TasksBoardPresenter {
       this.#cleanupComponent.toggleDisabled(!hasTasksInBasket); // Включаем/выключаем кнопку
     }
   }
-  
+
   #handleModelEvent(event, payload) {
     switch (event) {
       case UserAction.ADD_TASK:

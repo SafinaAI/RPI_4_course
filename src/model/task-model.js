@@ -1,6 +1,6 @@
 import Observable from "../framework/observable.js";
 import generateUniqueIdentifier from "../utils.js";
-import { tasks } from "../mock/task.js";
+//import { tasks } from "../mock/task.js";
 import { UpdateType, UserAction } from "../consts.js";
 
 export default class TasksModel extends Observable {
@@ -14,9 +14,7 @@ export default class TasksModel extends Observable {
     super();
     this.#tasksApiService = tasksApiService;
 
-    this.#tasksApiService.tasks.then((tasks) => {
-      
-    });
+    this.#tasksApiService.tasks.then((tasks) => {});
   }
 
   async init() {
@@ -98,28 +96,23 @@ export default class TasksModel extends Observable {
 
   async clearBasketTasks() {
     const basketTasks = this.#boardtasks.filter(
-      task => task.status === "trash"
+      (task) => task.status === "trash"
     );
 
     try {
       await Promise.all(
-        basketTasks.map(task => this.#tasksApiService.deleteTask(task.id))
+        basketTasks.map((task) => this.#tasksApiService.deleteTask(task.id))
       );
       this.#boardtasks = this.#boardtasks.filter(
-        task => task.status !== "trash"
+        (task) => task.status !== "trash"
       );
       this._notify(UserAction.DELETE_TASK, { status: "trash" });
     } catch (error) {
-        throw error;
+      throw error;
     }
   }
 
   hasBasketTasks() {
-    return this.#boardtasks.some(task => task.status === "trash");
+    return this.#boardtasks.some((task) => task.status === "trash");
   }
 }
-
-
-
-
-
